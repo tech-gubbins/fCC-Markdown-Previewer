@@ -1,0 +1,114 @@
+// Variables
+$light-color: #f8f9fa;
+$less-light-color: #ced4da;
+$grey-color: #343a40;
+$less-grey-color: #5b6168;
+
+// General styles for the web app
+body {
+  background-color: $light-color;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  margin-top: 2rem;
+}
+
+h1 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color: $grey-color;
+  margin-bottom: 2rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.textarea-container, .preview-container {
+  margin-bottom: 1.5rem;
+}
+
+.textarea-container {
+  .form-control {
+    height: 100%;
+    resize: none;
+  }
+}
+
+// Styles for the markdown preview window
+.preview {
+  border: 1px solid $less-light-color;
+  border-radius: 4px;
+  padding: 15px;
+  background-color: $light-color;
+  height: 100%;
+  overflow-y: auto;
+}
+
+// Styles for markdown output
+.preview {
+  // Styles for table content
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+  }
+
+  th,
+  td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border: 1px solid $less-grey-color;
+  }
+
+  th {
+    background-color: $less-light-color;
+  }
+
+  // Styles for block quotes
+  blockquote {
+    padding: 0.75rem 1.25rem;
+    margin: 0 0 1rem;
+    font-size: 1.25rem;
+    border-left: 0.25rem solid $less-light-color;
+    background-color: $light-color;
+  }
+
+  // Styles for text content 
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  // Styles for inline code and code blocks
+  pre {
+    display: block;
+    font-size: 90%;
+    color: $grey-color; /* Normal text color for code blocks */
+    background-color: $light-color;
+    border: 1px solid $less-light-color;
+    border-radius: 0.25rem;
+    padding: 0.75rem 1.25rem;
+
+    code {
+      color: inherit; /* Ensures code within pre elements uses the pre element's text color */
+      background-color: transparent; /* Removes the background color from inline code within pre */
+      padding: 0; /* Removes padding from inline code within pre */
+    }
+  }
+
+  // Styles for images
+  img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px auto;
+  }
+}
