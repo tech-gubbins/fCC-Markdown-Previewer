@@ -9,9 +9,17 @@ const App = () => {
   // Load the placeholder markdown file to display
   useEffect(() => {
     fetch("/placeholder.md")
-      .then((response) => response.text())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.text();
+      })
       .then((text) => setMarkdown(text))
-      .catch((err) => console.error("Error fetching the markdown file:", err));
+      .catch((err) => {
+        console.error("Error fetching the markdown file:", err);
+        setMarkdown("# Fetch Error\n\nCould not load placeholder.md.");
+      });
   }, []);
 
   const handleInputChange = (e) => {
